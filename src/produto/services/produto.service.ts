@@ -14,9 +14,9 @@ export class ProdutoService {
 
     async findAll(): Promise<Produto[]> {
         return await this.produtoRepository.find({
-        //    relations:{
-        //        categoria: true
-        //    }
+            relations:{
+                categoria: true
+            }
         });
     }
     async findById(id: number): Promise<Produto> {
@@ -24,9 +24,9 @@ export class ProdutoService {
             where: {
                 id
             },
-        //    relations:{
-        //        categoria: true
-        //    }
+            relations:{
+                categoria: true
+            }
         });
         if (!produto)
             throw new HttpException('Produto não encontrado', HttpStatus.NOT_FOUND);
@@ -38,9 +38,9 @@ export class ProdutoService {
             where:{
                 nome: ILike(`%${nome}%`)
             },
-        //    relations:{
-        //        categoria: true
-        //    }
+            relations:{
+                categoria: true
+            }
         })
     }
     async create(produto: Produto) : Promise<Produto> {
@@ -58,7 +58,7 @@ export class ProdutoService {
         return await this.produtoRepository.delete(id)
     }
 
-    async findByPrecoAsc(preco: number): Promise<Produto[]> { //desafio
+  /*  async findByPrecoAsc(preco: number): Promise<Produto[]> { //desafio
         return await this.produtoRepository.find({
             where: {preco: MoreThan(preco)},
             order: {preco: "ASC"},
@@ -78,5 +78,5 @@ export class ProdutoService {
             }
         });
         
-    }
+    }*/
 }

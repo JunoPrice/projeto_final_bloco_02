@@ -32,9 +32,9 @@ export class Produto {
     @Column({type: "varchar", length: 5000, nullable: true})
     foto : string
 
-    //@ManyToOne(() => Categoria, (categoria) => categoria.produto, {
-     //   onDelete: "CASCADE"
-    //})
+    @ManyToOne(() => Categoria, (categoria) => categoria.produto, {
+       onDelete: "CASCADE"
+    })
     categoria: Categoria
 
 }

@@ -37,7 +37,7 @@ export class ProdutoController {
         return this.produtoService.delete(id);
     }
 
-    @Get('/preco/maior/:preco')
+  /*  @Get('/preco/maior/:preco')
     @HttpCode(HttpStatus.OK)
     findByPrecoAsc(@Param('preco', ParseIntPipe) preco: number): Promise<Produto[]> {
         return this.produtoService.findByPrecoAsc(preco);
@@ -46,6 +46,6 @@ export class ProdutoController {
     @HttpCode(HttpStatus.OK)
     findByPrecoDesc(@Param('preco', ParseIntPipe) preco: number): Promise<Produto[]> {
         return this.produtoService.findByPrecoDesc(preco);
-    }
+    } */
 
 }
