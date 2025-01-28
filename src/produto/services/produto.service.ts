@@ -58,7 +58,7 @@ export class ProdutoService {
         return await this.produtoRepository.delete(id)
     }
 
-  /*  async findByPrecoAsc(preco: number): Promise<Produto[]> { //desafio
+    async findByPrecoAsc(preco: number): Promise<Produto[]> { //desafio
         return await this.produtoRepository.find({
             where: {preco: MoreThan(preco)},
             order: {preco: "ASC"},
@@ -78,5 +78,5 @@ export class ProdutoService {
             }
         });
         
-    }*/
+    }
 }
